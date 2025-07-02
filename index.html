@@ -9,15 +9,15 @@
     body {
       margin: 0;
       font-family: 'Proxima Nova', sans-serif;
-      background-color: #111;
+      background-color: #1A1A1A;
       color: white;
       padding: 2rem;
     }
 
-    .logo {
-      position: absolute;
-      top: 1rem;
-      left: 2rem;
+    .header {
+      display: flex;
+      justify-content: flex-end;
+      padding: 1rem 2rem 0 2rem;
     }
 
     .logo img {
@@ -30,7 +30,7 @@
       flex-direction: column;
       align-items: center;
       gap: 2rem;
-      margin-top: 6rem;
+      text-align: center;
     }
 
     .hero img.main {
@@ -40,66 +40,62 @@
     }
 
     h1 {
-      color: #FFD700;
+      color: #FFC907;
       margin: 1rem 0;
       font-family: 'Proxima Nova', sans-serif;
     }
 
     p {
       max-width: 600px;
-      margin: 0 auto 2rem;
+      margin: 0 auto 1rem;
       line-height: 1.6;
-      color: #ddd;
+      color: #ffffff;
       font-family: Georgia, serif;
     }
 
+    select {
+      padding: 0.6rem;
+      margin-bottom: 1rem;
+      font-size: 1rem;
+    }
+
     button {
-      background-color: #FFD700;
-      color: black;
+      background-color: #FFC907;
+      color: #003366;
       padding: 1.2rem 2.5rem;
       border: none;
       font-weight: bold;
+      font-size: 1.1rem;
       border-radius: 5px;
       cursor: pointer;
-      font-size: 1.1rem;
       font-family: 'Proxima Nova', sans-serif;
-      margin-top: 1rem;
     }
 
     button:hover {
-      background-color: #e6c200;
-    }
-
-    select {
-      padding: 0.8rem;
-      font-size: 1rem;
-      font-family: 'Proxima Nova', sans-serif;
-      margin-top: 1rem;
-      border-radius: 5px;
+      background-color: #FFC907;
     }
 
     @media(min-width: 768px) {
       .hero {
         flex-direction: row;
         justify-content: center;
-      }
-
-      .hero img.main {
-        max-width: 400px;
+        text-align: left;
       }
 
       .text-content {
         max-width: 600px;
-        text-align: left;
+        padding-left: 2rem;
       }
     }
   </style>
 </head>
 
 <body>
-  <!-- Logo Image -->
-  <div class="logo">
-    <img src="logo.png" alt="Charity Water Logo">
+  <!-- Logo Header Right -->
+  <div class="header">
+    <div class="logo">
+      <img src="logo.png" alt="Charity Water Logo">
+    </div>
   </div>
 
   <!-- Hero Section -->
@@ -111,25 +107,29 @@
       <p>
         100% of your donation brings clean water to rural communities in 29 countries. We show you exactly where it goes.
         Every project includes photos and GPS coordinates so you can see the lives you helped change, one drop at a time.
-      </p> 
-      <select id="donation-options">
+      </p>
+
+      <select id="donate-method">
         <option disabled selected>Select a way to give</option>
-        <option value="https://www.charitywater.org/donate">Donate directly here</option>
-        <option value="https://www.charitywater.org/fundraisers">Start a fundraiser</option>
-        <option value="https://www.charitywater.org/legacy">Write into will</option>
-        <option value="https://www.charitywater.org/crypto">Cryptocurrency</option>
-        <option value="https://www.charitywater.org/marathon">Run a marathon</option>
+        <option value="https://donate.charitywater.org">Donate directly here</option>
+        <option value="https://charitywater.org/fundraisers">Start a fundraiser</option>
+        <option value="https://charitywater.org/legacy">Write into will</option>
+        <option value="https://charitywater.org/crypto">Cryptocurrency</option>
+        <option value="https://charitywater.org/events">Run a marathon</option>
       </select>
-      <button onclick="goToLink()">Give Clean Water Now</button>
+
+      <br>
+
+      <button onclick="goDonate()">Give Clean Water Now</button>
     </div>
   </div>
 
   <script>
-    function goToLink() {
-      const select = document.getElementById("donation-options");
-      const link = select.value;
-      if (link) {
-        window.open(link, '_blank');
+    function goDonate() {
+      const select = document.getElementById('donate-method');
+      const url = select.value;
+      if (url) {
+        window.open(url, '_blank');
       }
     }
   </script>
