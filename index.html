@@ -20,7 +20,7 @@
     }
 
     .logo img {
-      width: 250px;
+      width: 300px;
       height: auto;
     }
 
@@ -50,7 +50,13 @@
       color: #fafafa;
       font-family: Georgia, serif;
     }
-
+.cta {
+  display: flex;
+  flex-direction: column;
+  align items: center;
+  gap: 1rem;
+}
+    
     button {
       background-color: #FFC907;
       color: 003366;
@@ -66,6 +72,13 @@
       background-color: #FFC907;
     }
 
+    select {
+      padding: 0.5rem;
+      font-size: 1rem;
+      border-radius: 5px;
+      border:none;
+      font-family: 'Proxima Nova', sans-serif;
+      
     @media(min-width: 768px) {
       .hero {
         flex-direction: row;
@@ -98,7 +111,16 @@
       <p>
         100% of your donation brings clean water to rural communities in 29 countries. We show you exactly where it goes.
         Every project includes photos and GPS coordinates so you can see the lives you helped change, one drop at a time.
-      </p>
+      </p> 
+     <div class="cta">
+        <select>
+          <option disabled selected>Select a way to give</option>
+          <option>Donate directly here</option>
+          <option>Start a fundraiser</option>
+          <option>Write into will</option>
+          <option>Cryptocurrency</option>
+          <option>Run a marathon</option>
+        </select>
       <button>Give Clean Water Now</button>
     </div>
   </div>
