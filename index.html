@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,86 +8,71 @@
   <style>
     body {
       margin: 0;
-      font-family: Arial, sans-serif;
-      background-color: #1a1a1a;
+      font-family: 'Proxima Nova', sans-serif;
+      background-color: #111;
       color: white;
-      display: flex;
-      flex-direction: column;
-      min-height: 100vh;
-    }
-
-    .container {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
       text-align: center;
       padding: 2rem;
-      max-width: 1200px;
-      margin: auto;
+    }
+
+    .logo {
+      margin-bottom: 2rem;
+    }
+
+    .logo img {
+      width: 180px;
+      height: auto;
     }
 
     .hero {
       display: flex;
       flex-direction: column;
       align-items: center;
-      margin-bottom: 2rem;
+      gap: 2rem;
     }
 
-    .hero img {
-      width: 100%;
-      max-width: 500px;
-      border-radius: 8px;
+    .hero img.main {
+      max-width: 100%;
+      width: 400px;
+      border-radius: 10px;
     }
 
-    .headline {
-      font-size: 2rem;
-      font-weight: bold;
+    h1 {
       color: #FFD700;
-      margin: 1.5rem 0 1rem;
+      margin: 1rem 0;
+      font-family: 'Proxima Nova', sans-serif;
     }
 
-    .subtext {
-      font-size: 1rem;
-      line-height: 1.6;
-      color: #eee;
+    p {
       max-width: 600px;
+      margin: 0 auto 2rem;
+      line-height: 1.6;
+      color: #ddd;
+      font-family: Georgia, serif;
     }
 
-    .cta-button {
+    button {
       background-color: #FFD700;
-      color: #003366;
-      border: none;
+      color: black;
       padding: 1rem 2rem;
-      font-size: 1rem;
+      border: none;
       font-weight: bold;
-      margin-top: 2rem;
-      cursor: pointer;
       border-radius: 5px;
-      transition: background-color 0.3s ease;
+      cursor: pointer;
+      font-family: 'Proxima Nova', sans-serif;
     }
 
-    .cta-button:hover {
+    button:hover {
       background-color: #e6c200;
-    }
-
-    .logo {
-      margin-top: 1rem;
-      font-size: 1.5rem;
-      font-weight: bold;
-    }
-
-    .logo span {
-      color: #FFD700;
     }
 
     @media(min-width: 768px) {
       .hero {
         flex-direction: row;
         justify-content: center;
-        gap: 3rem;
       }
 
-      .hero img {
+      .hero img.main {
         max-width: 400px;
       }
 
@@ -97,21 +83,26 @@
     }
   </style>
 </head>
+
 <body>
-  <div class="container">
-    <div class="logo">
-      <span>☕</span> charity: water
-    </div>
-    <div class="hero">
-      <img src="childpicture.jpg" alt="Smiling child with water">
-      <div class="text-content">
-        <div class="headline">You Want to See Your Impact? We’ll Show You Every Drop</div>
-        <div class="subtext">
-          100% of your donation brings clean water to rural communities in 29 countries, and we show you exactly where it goes. Clean water is a human right, and your impact should never be a mystery. With charity: water, every completed project includes photos and GPS coordinates so you can see the lives you helped change, one drop at a time.
-        </div>
-        <button class="cta-button">Give Clean Water Now</button>
-      </div>
+  <!-- Logo Image -->
+  <div class="logo">
+    <img src="logo.png" alt="Charity Water Logo">
+  </div>
+
+  <!-- Hero Section -->
+  <div class="hero">
+    <img class="main" src="childpicture.jpg" alt="Smiling child holding water">
+
+    <div class="text-content">
+      <h1>You Want to See Your Impact? We’ll Show You Every Drop</h1>
+      <p>
+        100% of your donation brings clean water to rural communities in 29 countries. We show you exactly where it goes.
+        Every project includes photos and GPS coordinates so you can see the lives you helped change, one drop at a time.
+      </p>
+      <button>Give Clean Water Now</button>
     </div>
   </div>
 </body>
+
 </html>
