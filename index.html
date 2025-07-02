@@ -51,22 +51,18 @@
       font-family: Georgia, serif;
     }
 
-    .cta {
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      gap: 1rem;
-    }
-
     select {
-      padding: 0.5rem;
+      padding: 0.75rem;
       font-size: 1rem;
+      margin-bottom: 1rem;
+      border-radius: 5px;
     }
 
     button {
       background-color: #FFD700;
       color: black;
-      padding: 1rem 2rem;
+      padding: 1.2rem 2.5rem;
+      font-size: 1.1rem;
       border: none;
       font-weight: bold;
       border-radius: 5px;
@@ -112,21 +108,31 @@
         100% of your donation brings clean water to rural communities in 29 countries. We show you exactly where it goes.
         Every project includes photos and GPS coordinates so you can see the lives you helped change, one drop at a time.
       </p>
-
       <div class="cta">
-        <button>Give Clean Water Now</button>
-        <select>
+        <select id="donation-method">
           <option disabled selected>Select a way to give</option>
-          <option>Donate directly here</option>
-          <option>Start a fundraiser</option>
-          <option>Write into will</option>
-          <option>Cryptocurrency</option>
-          <option>Run a marathon</option>
+          <option value="https://www.charitywater.org/donate">Donate directly here</option>
+          <option value="https://www.charitywater.org/fundraise">Start a fundraiser</option>
+          <option value="https://www.charitywater.org/legacy">Write into will</option>
+          <option value="https://www.charitywater.org/crypto">Cryptocurrency</option>
+          <option value="https://www.charitywater.org/run">Run a marathon</option>
         </select>
+        <button onclick="goToDonation()">Give Clean Water Now</button>
       </div>
-
     </div>
   </div>
+
+  <script>
+    function goToDonation() {
+      const select = document.getElementById('donation-method');
+      const url = select.value;
+      if (url) {
+        window.open(url, '_blank');
+      } else {
+        alert('Please select a donation method.');
+      }
+    }
+  </script>
 </body>
 
 </html>
