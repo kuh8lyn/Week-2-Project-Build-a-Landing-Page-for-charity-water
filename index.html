@@ -11,16 +11,17 @@
       font-family: 'Proxima Nova', sans-serif;
       background-color: #111;
       color: white;
-      text-align: center;
       padding: 2rem;
     }
 
     .logo {
-      margin-bottom: 2rem;
+      position: absolute;
+      top: 1rem;
+      left: 2rem;
     }
 
     .logo img {
-      width: 180px;
+      width: 300px;
       height: auto;
     }
 
@@ -29,6 +30,7 @@
       flex-direction: column;
       align-items: center;
       gap: 2rem;
+      margin-top: 6rem;
     }
 
     .hero img.main {
@@ -51,27 +53,29 @@
       font-family: Georgia, serif;
     }
 
-    select {
-      padding: 0.75rem;
-      font-size: 1rem;
-      margin-bottom: 1rem;
-      border-radius: 5px;
-    }
-
     button {
       background-color: #FFD700;
       color: black;
       padding: 1.2rem 2.5rem;
-      font-size: 1.1rem;
       border: none;
       font-weight: bold;
       border-radius: 5px;
       cursor: pointer;
+      font-size: 1.1rem;
       font-family: 'Proxima Nova', sans-serif;
+      margin-top: 1rem;
     }
 
     button:hover {
       background-color: #e6c200;
+    }
+
+    select {
+      padding: 0.8rem;
+      font-size: 1rem;
+      font-family: 'Proxima Nova', sans-serif;
+      margin-top: 1rem;
+      border-radius: 5px;
     }
 
     @media(min-width: 768px) {
@@ -107,29 +111,25 @@
       <p>
         100% of your donation brings clean water to rural communities in 29 countries. We show you exactly where it goes.
         Every project includes photos and GPS coordinates so you can see the lives you helped change, one drop at a time.
-      </p>
-      <div class="cta">
-        <select id="donation-method">
-          <option disabled selected>Select a way to give</option>
-          <option value="https://www.charitywater.org/donate">Donate directly here</option>
-          <option value="https://www.charitywater.org/fundraise">Start a fundraiser</option>
-          <option value="https://www.charitywater.org/legacy">Write into will</option>
-          <option value="https://www.charitywater.org/crypto">Cryptocurrency</option>
-          <option value="https://www.charitywater.org/run">Run a marathon</option>
-        </select>
-        <button onclick="goToDonation()">Give Clean Water Now</button>
-      </div>
+      </p> 
+      <select id="donation-options">
+        <option disabled selected>Select a way to give</option>
+        <option value="https://www.charitywater.org/donate">Donate directly here</option>
+        <option value="https://www.charitywater.org/fundraisers">Start a fundraiser</option>
+        <option value="https://www.charitywater.org/legacy">Write into will</option>
+        <option value="https://www.charitywater.org/crypto">Cryptocurrency</option>
+        <option value="https://www.charitywater.org/marathon">Run a marathon</option>
+      </select>
+      <button onclick="goToLink()">Give Clean Water Now</button>
     </div>
   </div>
 
   <script>
-    function goToDonation() {
-      const select = document.getElementById('donation-method');
-      const url = select.value;
-      if (url) {
-        window.open(url, '_blank');
-      } else {
-        alert('Please select a donation method.');
+    function goToLink() {
+      const select = document.getElementById("donation-options");
+      const link = select.value;
+      if (link) {
+        window.open(link, '_blank');
       }
     }
   </script>
