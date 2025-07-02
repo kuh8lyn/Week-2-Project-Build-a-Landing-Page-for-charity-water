@@ -9,27 +9,28 @@
     body {
       margin: 0;
       font-family: 'Proxima Nova', sans-serif;
-      background-color: #1A1A1A;
+      background-color: #111;
       color: white;
-      text-align: right;
+      text-align: center;
       padding: 2rem;
     }
 
     .logo {
       margin-bottom: 2rem;
-      text-alight: left;
     }
 
     .logo img {
-      width: 300px;
+      width: 180px;
       height: auto;
-    } 
+    }
+
     .hero {
       display: flex;
-      flec-direction: column;
-      gap: 2rem;
+      flex-direction: column;
       align-items: center;
+      gap: 2rem;
     }
+
     .hero img.main {
       max-width: 100%;
       width: 400px;
@@ -37,7 +38,7 @@
     }
 
     h1 {
-      color: #FFC907;
+      color: #FFD700;
       margin: 1rem 0;
       font-family: 'Proxima Nova', sans-serif;
     }
@@ -46,19 +47,13 @@
       max-width: 600px;
       margin: 0 auto 2rem;
       line-height: 1.6;
-      color: #fafafa;
+      color: #ddd;
       font-family: Georgia, serif;
     }
-.cta {
-  display: flex;
-  flex-direction: column;
-  align items: flex-start;
-  gap: 1rem;
-}
-    
+
     button {
-      background-color: #FFC907;
-      color: 003366;
+      background-color: #FFD700;
+      color: black;
       padding: 1rem 2rem;
       border: none;
       font-weight: bold;
@@ -68,22 +63,13 @@
     }
 
     button:hover {
-      background-color: #FFC907;
+      background-color: #e6c200;
     }
 
-    select {
-      padding: 0.5rem;
-      font-size: 1rem;
-      border-radius: 5px;
-      border:none;
-      font-family: 'Proxima Nova', sans-serif;
-      
     @media(min-width: 768px) {
       .hero {
         flex-direction: row;
         justify-content: center;
-        align items: flex-start;
-        text-align: left; 
       }
 
       .hero img.main {
@@ -99,8 +85,9 @@
 </head>
 
 <body>
+  <!-- Logo Image -->
   <div class="logo">
-    <img src="logo.png.1" alt="Charity Water Logo">
+    <img src="logo.png" alt="Charity Water Logo">
   </div>
 
   <!-- Hero Section -->
@@ -112,16 +99,7 @@
       <p>
         100% of your donation brings clean water to rural communities in 29 countries. We show you exactly where it goes.
         Every project includes photos and GPS coordinates so you can see the lives you helped change, one drop at a time.
-      </p> 
-     <div class="cta">
-        <select>
-          <option disabled selected>Select a way to give</option>
-          <option>Donate directly here</option>
-          <option>Start a fundraiser</option>
-          <option>Write into will</option>
-          <option>Cryptocurrency</option>
-          <option>Run a marathon</option>
-        </select>
+      </p>
       <button>Give Clean Water Now</button>
     </div>
   </div>
